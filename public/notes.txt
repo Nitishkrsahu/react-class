@@ -1,0 +1,454 @@
+                     Components in React
+
+- React is component based.
+- A component comprises
+  a) Presentation
+  b) Styles
+  c) Functionality
+
+- Presentation is by using HTML.
+- Styles are by using CSS.
+- Functionality by using JavaScript & TypeScript.
+- Component uses pre-defined services to handle various functionalities, which include
+
+ a) Form Services
+ b) Validation Services
+ c) API services
+ d) Routing Services etc..
+
+Creating Component
+
+-  React component can be designed by using class or function.
+-  Classes are supported but not recommended in modern React.
+
+Syntax:
+
+  Function Component()
+      {
+    
+      }
+
+  Class Component
+      {
+      
+      }
+
+ Function Component Rules:
+
+ - It can be defined as declaration or expression.
+
+ Syntax: declaration
+
+  Function Component(){
+   
+   }
+
+ Syntax: expression
+  
+  const Component = function(){
+   
+     }
+
+- It's name must start with an uppercase letter.
+- It can't be void type.
+- It must return a function with markup.
+- markup must be in one fragment.
+
+Syntax:
+
+  function Login()
+      {
+        return (
+             <div>
+                  
+             </div>
+         );
+      }
+
+- The markup returned by component function is known as JSX.
+- Every component function must return JSX element.
+
+ Syntax:
+
+ function Login()
+     {
+       return (
+           <h2> React <h2>           ==> invalid - multiple Fragments
+           <p>JavaScript Library</p>
+         );
+     }
+ 
+ - JSX markup can't have void elements
+
+  <img>        //invalid
+  <img></img>  // valid
+  <input type="text" />
+  <input type="text"></input>
+
+- Every element must end in JSX
+- JSX elements can't use attributes, you have to use only properties.
+
+ <img class="img-fluid" />       // invalid
+ <img className="img-fluid" />   // valid
+
+                              Building Tools
+
+- They are create a new web application or native application.
+- They can setup all required library for budling application.
+- They can create and configure local or cloud server for hosting application.
+- They can provide various environments like
+  a) Development
+  b) Production
+
+- They configure libraries and map to the resources.
+- They can compile your application using AOT [Ahead-of-time]
+
+- There are various bundling tools like
+
+ a) webpack
+ b) vite
+ c) Paracel
+ d) rs-build etc..
+
+Create a new application using vite:
+
+ 1. Open any location on your PC from command prompt
+
+ 2. Run the following command
+
+  > npm create vite@latest app-name -- --template react
+
+3. It will scaffold a project folder with required configuration, however the library is not yet ready for project.
+
+4. Change into the project folder
+
+ F:\> cd app-name
+ F:\> app-name> npm install
+
+5. This will install all required library for react
+
+ a) react
+ b) react-dom
+ 
+6. Open your project folder in vs code
+7. Run your application 
+
+ > npm run dev
+8. Your application is hosted on local server
+
+  http://localhost:5173/
+
+
+                               React Vite Application File Structure
+
+1. node_modules : It comprises of all modules required for project.
+                  Modules installed using NPM are kept in this folder.
+
+2. Public:  It comprises of static resources like html, images, docs, videos etc.
+
+3. src : It comprises of dynamic resource like css, scss, js, jsx, ts, tsx etc.
+
+4. gitignore : It configures the resources to ignore while publishing onto GIT pages.
+
+5. eslint.config.js : It is JavaScript language analysis tool used to find issues in JavaScript while using with React.
+
+6. Index.html : It is the startup page for application.
+
+7. package.json : configures the dependencies and batch operations.
+
+8. package.lock.json: to run, debug, test and deploy project.
+
+9. vite.config.js : It configures all required plugins using vite initially is defined with "react()".
+
+
+Note: Change "src/app.jsx" to change the startup component UI.
+
+
+Adding Components into React App:
+
+1. React app uses a modular system, hence every component is configured in a JavaScript file with extension ".js" or ".jsx".
+
+2. Every Component file must be in "src" folder.
+
+3. Every component can have styles sheet & test file, hence it is always recommended to keep your component file is s separate folder.
+
+ .jsx           markup & logic
+ .css           styles
+ .test.js       test cases
+
+  (or) 
+
+ .spec.js   
+
+4. A component can be class or function. Modern React recommended function as component.. you have to configure a function in ".jsx" file.
+
+ function Name()       //declaration
+ {
+ }
+
+ const Name = function(){  // expression
+ 
+ }
+
+ 5. It is mandatory that every component function exported 
+
+ export function Name()
+ {
+ }
+
+ (or)
+
+ const Name = function (){
+
+ }
+ export default Name;
+
+ 6. Add following files
+
+  home.jsx
+  home.css
+  home.test.js
+
+ 7. home.jsx
+
+  export function Home(){
+   return (
+            <>
+             <h2>Home</h2>
+            </>
+          )
+   }
+
+ 8. Go to main.jsx and import Home
+
+ import { Home } from './components/home.jsx'
+
+             (or)
+
+ import  Home   from './components/home.jsx'
+
+ (if marked as default export)
+
+FAQ: 
+
+Q. what is <StrictMode> ?
+ - It is used to force developers to following code coding techniques.
+   It reduces code inconsistency.
+   It complies and executes the application 2 times. You can remove the <StrictMode> to run only for development.
+
+9. Clean up all CSS code from index.css & app.css in src 
+
+                                 State  in React App
+
+- Web uses "HTTP" as protocol.
+- HTTP is a state less protocol.
+- It can't remember information between requests.
+
+  [GO-GET-FORGET]
+
+Go - Establish connection with server
+GET - Get response from server
+FORGET - Clean up the response  details from server.
+
+ - Web applications use various state management techniques to remember and use information across requests.
+ - State management allows to allocate memory which is accessible across requests.
+
+ - State can be managed both
+
+ a)client side
+ b)server side
+
+  - Client side state management allows to allocate memory and store data on client device so that it can avoid round trip.
+
+ - Server side state management allocates memory on server so that data is loaded always as a result of round trip.
+
+ - React JS can manage server side rendering and state by using a full stack environment designed using framework like Next JS
+
+ - React can manage state client side by using various techniques(hooks) like
+
+  a) UseState()
+  b) useContext()
+  c) useCallback()
+  d) useMemo()
+  e) useRef()
+  f) UseReducer() etc..
+
+
+  - React can use 3rd party state management library like "Redux" while  handling large scale applications.
+
+                                   
+                                        useState()
+
+ - It is react Hook for handling local state for component.
+ - Hook is technically a function.
+ - It represents a service.
+ - service is a pre-defined business logic which you can inject, customize and implement for your requirements.
+ - useState() is a hook that returns memory object with getter & setter.
+ - Getter can read and return state value.
+ - Setter can assign and save value into state.
+ - It requires a de-structuring declaration to access the getter and setter of state.
+
+ Syntax:
+
+  const [getter, setter] = useState();
+
+ 
+
+FAQ:
+
+ 1 What is [getter, setter] referring to ?
+
+ A. It refers to de-structuring declaration.
+
+ 2. Why you using const for declaring state, can we use var or let?
+ 
+ A. 
+   - State must be initialized.
+   - Var & let allows to ignore initialization, hence they are not recommended.
+   - State can't be assigned after initialization.
+   - var & let allows assignment, hence it is not good for state.
+   - Yes we can use var & let to declare state but not recommended.
+
+ 3. Why const for state?
+
+ - It allows only initialization
+ - It will not allow assignment
+ - It will not allow shadowing and hosting.
+
+ 4. How you can configure a new value into state if it is declared with const?
+
+ A - we will not assign value into const.
+     we re-initialize value into const. 
+
+Syntax:
+
+  const [uname, setUname] = useState("Jhon");
+
+  setUname = "David"; //invalid -assignment to const is not valid 
+ 
+  setUname("David");   // valid
+
+
+ Note : You can't set state while creating the component. You can set value into state after component creation. 
+
+        It can be at the mount phase or on any specific event.
+        component mount[Load] is defined using "useEffect()" Hook.
+
+                                    UseEffect 
+
+- It is used to defined actions to perform at the time of mounting component.
+- It can also defined on unmount.
+- It uses a callback and dependencies.
+
+ Syntax:
+
+     useEffect(()=>{
+  
+       //  actions on mount
+       return()=>{
+       // actions on unmount
+    }
+ },[dependencies])
+
+                                   Data Binding
+
+- Data binding is a technique of accessing data from source and updating into UI.
+- It identifies the changes from UI and updates back to source.
+
+ - React supports "One way Binding".
+
+  - It can access from source and binding to UI elements.
+  - It makes the data in UI read-only.
+  - Read-Only allows to submit but will not allow to modify.
+  - It is secured and will not allow accidental or intentional changes.
+  - React requires explicit techniques to enable two way binding.
+  - JavaScript requires lot of DOM methods for data binding.
+  - React uses a binding expression "{}" to bind dynamic values with UI elements.
+
+ Syntax:
+
+  var uname = "jhon";
+  <p>Hello!</p>
+  <input type="text" value={uname} />
+
+
+                   Binding Various Types of Data
+
+- JavaScript data types are categorized into 2 groups 
+
+ 1. Primitive Types
+ 2. Non Primitive Types
+
+ - Primitive Types
+ a) Number
+ b) Boolean
+ c) String
+ d) Null
+ e) Undefined
+ f) Big Int
+ g) Symbol
+
+ Number Type:
+
+ - Number can be any one of the following
+
+ Signed integer
+ Unsigned integer
+ Float
+ Double
+ Decimal
+ Exponent
+ Binary
+ Hexadecimal
+ Octa
+ Big Int
+
+ - JavaScript number functions are required in React to verify and present number.
+
+ a) toFixed()
+
+   const [price] = useState(4500.40);
+    <p>{price.toFixed(2)}</p>
+
+ b) toPrecision()
+   
+   const [price] = useState(3.414);
+   <p>{price.toPrecision(2)}</p> //3.4
+ 
+ c) toLocaleSTring  [formats according to region]
+
+   const [price] = useState(34983);
+
+    <p>Price = {price.toLocaleString('en-IN')}</p>
+  
+   i) Style : Currency, percent, Unit
+
+    Ex:
+        <p>Price = {price.toLocaleString('en-IN', {style: 'currency', currency: 'USD'})}</p>
+        <p>Percent = {marks.toLocaleString('en-IN', {style: 'percent'})}</p>
+        <p>Weight = {weight.toLocaleString('en-IN', {style: 'unit', unit: 'meter'})}</p>
+  
+   ii) notation : compact 
+
+     ex: 
+
+           <p>Views = {views.toLocaleString('en-US', {notation: 'compact'})}</p>
+
+ d) isNaN() : It used to verify Number
+ e) parseInt() :
+ f) ParseFloat() :
+
+
+ String Type:
+
+ a) Double Quotes ""
+ b) Single Quotes ''
+ c) Backtick      ``
+
+- Backtick allow dynamic binding expression using "${}"
+
+ Syntax: 
+ 
+  <p className={`${effect} bg-style`}>This is Paragraph</p>
+
+ Note : All string Functions are same as in JavaScript.
