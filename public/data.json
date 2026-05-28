@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Mouse",
+    "category": "Electronics",
+    "price": 599,
+    "brand": "LogiTech",
+    "stock": 45,
+    "rating": 4.5
+  },
+  {
+    "id": 2,
+    "name": "Bluetooth Speaker",
+    "category": "Electronics",
+    "price": 1499,
+    "brand": "Boat",
+    "stock": 30,
+    "rating": 4.3
+  },
+  {
+    "id": 3,
+    "name": "Running Shoes",
+    "category": "Footwear",
+    "price": 2499,
+    "brand": "Nike",
+    "stock": 20,
+    "rating": 4.7
+  },
+  {
+    "id": 4,
+    "name": "Smart Watch",
+    "category": "Wearable",
+    "price": 3999,
+    "brand": "Noise",
+    "stock": 15,
+    "rating": 4.4
+  },
+  {
+    "id": 5,
+    "name": "Laptop Bag",
+    "category": "Accessories",
+    "price": 899,
+    "brand": "Skybags",
+    "stock": 50,
+    "rating": 4.2
+  },
+  {
+    "id": 6,
+    "name": "Water Bottle",
+    "category": "Home",
+    "price": 299,
+    "brand": "Milton",
+    "stock": 80,
+    "rating": 4.1
+  },
+  {
+    "id": 7,
+    "name": "Gaming Keyboard",
+    "category": "Electronics",
+    "price": 1999,
+    "brand": "Redragon",
+    "stock": 25,
+    "rating": 4.6
+  },
+  {
+    "id": 8,
+    "name": "Office Chair",
+    "category": "Furniture",
+    "price": 5499,
+    "brand": "GreenSoul",
+    "stock": 10,
+    "rating": 4.5
+  },
+  {
+    "id": 9,
+    "name": "LED Monitor",
+    "category": "Electronics",
+    "price": 8999,
+    "brand": "Samsung",
+    "stock": 12,
+    "rating": 4.8
+  },
+  {
+    "id": 10,
+    "name": "Mobile Charger",
+    "category": "Accessories",
+    "price": 499,
+    "brand": "Ambrane",
+    "stock": 60,
+    "rating": 4.0
+  }
+]
