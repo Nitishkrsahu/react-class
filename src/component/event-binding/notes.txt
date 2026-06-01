@@ -1,0 +1,988 @@
+                   
+                                            React 
+
+ 1. What is React?
+   - It is JavaScript library for building UI.   [ https://legacy.reactjs.org/ ] 
+   - It is JavaScript library for web and native UI.  [ https://react.dev/ ]
+
+ 2. What is difference between Angular and React?
+   - Angular is framework.
+   - React is a Library.
+ 
+ Note: Angular is not a alternative for react and vice versa.
+
+ 3. Why we need Angular & React?
+  - To build SPA & PWA.
+ 
+ 4. What are the challenges in modern web development
+
+  - Unified UX
+    - Application must have same experience across various devices.
+    - Mobile users must get same experience across to everything.
+
+ - Fluid UX
+     - User stays on one page and can get access to everything from the page.
+     - Technically it requires lot of AJAX.
+
+ - Loosely coupled & extensible
+   - It allows to build and plugin new features without disturbing existing.
+   - It should add new functionality without leading to catastrophic feature.
+
+ - It must follow all web principles
+
+ - Accessibility
+ - Internationalization
+ - Privacy
+ - Security
+
+5. What is solution?
+ - Better Build SPA & PWA
+ - Earlier we were building Multi Page Applications.
+
+6. How to build SPA?
+
+ - By using JavaScript, jQuery, React, Angular, Vue, knockout Js, Back Bone Js etc..
+
+7. What are the issues with javaScript & jQuery?
+
+ - Lot of DOM interactions.
+ - Lot of coding
+ - Heavy on Application
+ - Slow in interactions etc...
+
+
+   Language - 
+   library -
+   framework -
+
+ If app have lot of framework in backend, it needs just a good UI - React
+ If app have less framework features in backend what a rich frontend - Angular
+
+
+Summary 
+
+
+- What is React?
+- Difference between React and Angular?
+- What are the modern challenges in web development?
+- SPA & PWA
+- What are the issues with javascript & jQuery in building SPA?
+
+
+ Features of React:
+
+ 1. It is component based
+  - It is easy to build interactive UI.
+  - It is faster in building UI.
+  - It enables reusability, extensibility, testability and maintainability.
+  - It enables loosely coupled and extensible architecture.
+
+ 2. It uses "Virtual DOM".
+  - It faster in interactions.
+  - It is faster in rendering.
+
+ 3. It is modular library.
+  - It enable reusability and extensibility.
+  - It enables separation and testability.
+  - It is light weight and faster.
+  - It uses application specific functions.
+
+ 4. It uses async techniques
+  - It uses unblocking mechanism.
+  - It allows to run multiple tasks parallelly.
+  - It improves performance of application.
+
+ FAQ: 
+ 
+ 1. What is DOM?
+ A. DOM is a hierarchy of elements in page.
+
+ 2. What is Shadow?
+ A. It is a hierarchy of elements in a component.
+    It uses a shadow root for components in page.
+    It comprises of elements hierarchy and styles with logic inside component.
+
+ 3. What is virtual DOM?
+   - It is copy of actual DOM.
+   - It is in the memory that update and renders output to client.
+   - however it have to update actual DOM for final rendering.
+ 
+
+ Issues with react
+ 
+- It is not designed for what you using.
+- Hence lot GAP's.
+- You have to fill the GAPS by using lot of 3rd party integrations.
+- Virtual DOM is not always satisfying.
+
+
+FAQ: 
+
+ - Is there any difference between React & React js?
+
+  A - No. React can be used with javascript & Typescript.
+
+                                React in existing Web Application
+
+
+ 1. Install Node JS
+
+    Node 15.X above
+
+ - Node JS is an open source JavaScript runtime.
+ - Developers require Node JS to build web Apps, Servers, CLI Tools & Scripts.
+ - Install Node JS gets a package Manager [NPM]
+
+  - After install check the version from command prompt
+
+  > node -v
+  > npm -v
+
+                              Create a new web application
+
+   a) Set package.json
+      > npm init -y
+
+   b) Add "README.md"
+   c) Add Folders
+      - Public [ for static resources like html, images, docs...]
+      - src    [ for dynamic resources like css, scss, js, jsx, ts, tsx....]
+ 
+    - Add following pages into public folder
+
+     a) index.html
+     b) home.html
+  
+  d) Enable React in Home page
+
+    - To use React in any web page you must have the following libraries
+
+      a) react
+      b) react-dom
+      c) babel
+
+  - "react" is the core library to enable react in page. It contains all basic react methods
+  - "react-dom" is virtual DOM library.
+  - "babel" is a JavaScript complier for react. [JIT, AOT]
+
+  Note: You can get the libraries from CDN.
+ 
+
+ 1. Command for Locally install
+
+ -  npm install react@18 react-dom@18 --save
+ -  npm install @babel/standalone --save
+
+
+React 18 provides CJS and UMD module systems.
+
+   CJS - Common JS
+   UMD - Universal Module Distribution
+
+
+                        Components in React
+
+- React is component based.
+- A component comprises
+  a) Presentation
+  b) Styles
+  c) Functionality
+
+- Presentation is by using HTML.
+- Styles are by using CSS.
+- Functionality by using JavaScript & TypeScript.
+- Component uses pre-defined services to handle various functionalities, which include
+
+ a) Form Services
+ b) Validation Services
+ c) API services
+ d) Routing Services etc..
+
+Creating Component
+
+-  React component can be designed by using class or function.
+-  Classes are supported but not recommended in modern React.
+
+Syntax:
+
+  Function Component()
+      {
+    
+      }
+
+  Class Component
+      {
+      
+      }
+
+ Function Component Rules:
+
+ - It can be defined as declaration or expression.
+
+ Syntax: declaration
+
+  Function Component(){
+   
+   }
+
+ Syntax: expression
+  
+  const Component = function(){
+   
+     }
+
+- It's name must start with an uppercase letter.
+- It can't be void type.
+- It must return a function with markup.
+- markup must be in one fragment.
+
+Syntax:
+
+  function Login()
+      {
+        return (
+             <div>
+                  
+             </div>
+         );
+      }
+
+- The markup returned by component function is known as JSX.
+- Every component function must return JSX element.
+
+ Syntax:
+
+ function Login()
+     {
+       return (
+           <h2> React <h2>           ==> invalid - multiple Fragments
+           <p>JavaScript Library</p>
+         );
+     }
+ 
+ - JSX markup can't have void elements
+
+  <img>        //invalid
+  <img></img>  // valid
+  <input type="text" />
+  <input type="text"></input>
+
+- Every element must end in JSX
+- JSX elements can't use attributes, you have to use only properties.
+
+ <img class="img-fluid" />       // invalid
+ <img className="img-fluid" />   // valid
+
+                              Building Tools
+
+- They are create a new web application or native application.
+- They can setup all required library for budling application.
+- They can create and configure local or cloud server for hosting application.
+- They can provide various environments like
+  a) Development
+  b) Production
+
+- They configure libraries and map to the resources.
+- They can compile your application using AOT [Ahead-of-time]
+
+- There are various bundling tools like
+
+ a) webpack
+ b) vite
+ c) Paracel
+ d) rs-build etc..
+
+Create a new application using vite:
+
+ 1. Open any location on your PC from command prompt
+
+ 2. Run the following command
+
+  > npm create vite@latest app-name -- --template react
+
+3. It will scaffold a project folder with required configuration, however the library is not yet ready for project.
+
+4. Change into the project folder
+
+ F:\> cd app-name
+ F:\> app-name> npm install
+
+5. This will install all required library for react
+
+ a) react
+ b) react-dom
+ 
+6. Open your project folder in vs code
+7. Run your application 
+
+ > npm run dev
+8. Your application is hosted on local server
+
+  http://localhost:5173/
+
+
+                               React Vite Application File Structure
+
+1. node_modules : It comprises of all modules required for project.
+                  Modules installed using NPM are kept in this folder.
+
+2. Public:  It comprises of static resources like html, images, docs, videos etc.
+
+3. src : It comprises of dynamic resource like css, scss, js, jsx, ts, tsx etc.
+
+4. gitignore : It configures the resources to ignore while publishing onto GIT pages.
+
+5. eslint.config.js : It is JavaScript language analysis tool used to find issues in JavaScript while using with React.
+
+6. Index.html : It is the startup page for application.
+
+7. package.json : configures the dependencies and batch operations.
+
+8. package.lock.json: to run, debug, test and deploy project.
+
+9. vite.config.js : It configures all required plugins using vite initially is defined with "react()".
+
+
+Note: Change "src/app.jsx" to change the startup component UI.
+
+
+Adding Components into React App:
+
+1. React app uses a modular system, hence every component is configured in a JavaScript file with extension ".js" or ".jsx".
+
+2. Every Component file must be in "src" folder.
+
+3. Every component can have styles sheet & test file, hence it is always recommended to keep your component file is s separate folder.
+
+ .jsx           markup & logic
+ .css           styles
+ .test.js       test cases
+
+  (or) 
+
+ .spec.js   
+
+4. A component can be class or function. Modern React recommended function as component.. you have to configure a function in ".jsx" file.
+
+ function Name()       //declaration
+ {
+ }
+
+ const Name = function(){  // expression
+ 
+ }
+
+ 5. It is mandatory that every component function exported 
+
+ export function Name()
+ {
+ }
+
+ (or)
+
+ const Name = function (){
+
+ }
+ export default Name;
+
+ 6. Add following files
+
+  home.jsx
+  home.css
+  home.test.js
+
+ 7. home.jsx
+
+  export function Home(){
+   return (
+            <>
+             <h2>Home</h2>
+            </>
+          )
+   }
+
+ 8. Go to main.jsx and import Home
+
+ import { Home } from './components/home.jsx'
+
+             (or)
+
+ import  Home   from './components/home.jsx'
+
+ (if marked as default export)
+
+FAQ: 
+
+Q. what is <StrictMode> ?
+ - It is used to force developers to following code coding techniques.
+   It reduces code inconsistency.
+   It complies and executes the application 2 times. You can remove the <StrictMode> to run only for development.
+
+9. Clean up all CSS code from index.css & app.css in src 
+
+                                 State  in React App
+
+- Web uses "HTTP" as protocol.
+- HTTP is a state less protocol.
+- It can't remember information between requests.
+
+  [GO-GET-FORGET]
+
+Go - Establish connection with server
+GET - Get response from server
+FORGET - Clean up the response  details from server.
+
+ - Web applications use various state management techniques to remember and use information across requests.
+ - State management allows to allocate memory which is accessible across requests.
+
+ - State can be managed both
+
+ a)client side
+ b)server side
+
+  - Client side state management allows to allocate memory and store data on client device so that it can avoid round trip.
+
+ - Server side state management allocates memory on server so that data is loaded always as a result of round trip.
+
+ - React JS can manage server side rendering and state by using a full stack environment designed using framework like Next JS
+
+ - React can manage state client side by using various techniques(hooks) like
+
+  a) UseState()
+  b) useContext()
+  c) useCallback()
+  d) useMemo()
+  e) useRef()
+  f) UseReducer() etc..
+
+
+  - React can use 3rd party state management library like "Redux" while  handling large scale applications.
+
+                                   
+                                        useState()
+
+ - It is react Hook for handling local state for component.
+ - Hook is technically a function.
+ - It represents a service.
+ - service is a pre-defined business logic which you can inject, customize and implement for your requirements.
+ - useState() is a hook that returns memory object with getter & setter.
+ - Getter can read and return state value.
+ - Setter can assign and save value into state.
+ - It requires a de-structuring declaration to access the getter and setter of state.
+
+ Syntax:
+
+  const [getter, setter] = useState();
+
+ 
+
+FAQ:
+
+ 1 What is [getter, setter] referring to ?
+
+ A. It refers to de-structuring declaration.
+
+ 2. Why you using const for declaring state, can we use var or let?
+ 
+ A. 
+   - State must be initialized.
+   - Var & let allows to ignore initialization, hence they are not recommended.
+   - State can't be assigned after initialization.
+   - var & let allows assignment, hence it is not good for state.
+   - Yes we can use var & let to declare state but not recommended.
+
+ 3. Why const for state?
+
+ - It allows only initialization
+ - It will not allow assignment
+ - It will not allow shadowing and hosting.
+
+ 4. How you can configure a new value into state if it is declared with const?
+
+ A - we will not assign value into const.
+     we re-initialize value into const. 
+
+Syntax:
+
+  const [uname, setUname] = useState("Jhon");
+
+  setUname = "David"; //invalid -assignment to const is not valid 
+ 
+  setUname("David");   // valid
+
+
+ Note : You can't set state while creating the component. You can set value into state after component creation. 
+
+        It can be at the mount phase or on any specific event.
+        component mount[Load] is defined using "useEffect()" Hook.
+
+                                    UseEffect 
+
+- It is used to defined actions to perform at the time of mounting component.
+- It can also defined on unmount.
+- It uses a callback and dependencies.
+
+ Syntax:
+
+     useEffect(()=>{
+  
+       //  actions on mount
+       return()=>{
+       // actions on unmount
+    }
+ },[dependencies])
+
+                                   Data Binding
+
+- Data binding is a technique of accessing data from source and updating into UI.
+- It identifies the changes from UI and updates back to source.
+
+ - React supports "One way Binding".
+
+  - It can access from source and binding to UI elements.
+  - It makes the data in UI read-only.
+  - Read-Only allows to submit but will not allow to modify.
+  - It is secured and will not allow accidental or intentional changes.
+  - React requires explicit techniques to enable two way binding.
+  - JavaScript requires lot of DOM methods for data binding.
+  - React uses a binding expression "{}" to bind dynamic values with UI elements.
+
+ Syntax:
+
+  var uname = "jhon";
+  <p>Hello!</p>
+  <input type="text" value={uname} />
+
+
+                   Binding Various Types of Data
+
+- JavaScript data types are categorized into 2 groups 
+
+ 1. Primitive Types
+ 2. Non Primitive Types
+
+ - Primitive Types
+ a) Number
+ b) Boolean
+ c) String
+ d) Null
+ e) Undefined
+ f) Big Int
+ g) Symbol
+
+ Number Type:
+
+ - Number can be any one of the following
+
+ Signed integer
+ Unsigned integer
+ Float
+ Double
+ Decimal
+ Exponent
+ Binary
+ Hexadecimal
+ Octa
+ Big Int
+
+ - JavaScript number functions are required in React to verify and present number.
+
+ a) toFixed()
+
+   const [price] = useState(4500.40);
+    <p>{price.toFixed(2)}</p>
+
+ b) toPrecision()
+   
+   const [price] = useState(3.414);
+   <p>{price.toPrecision(2)}</p> //3.4
+ 
+ c) toLocaleSTring  [formats according to region]
+
+   const [price] = useState(34983);
+
+    <p>Price = {price.toLocaleString('en-IN')}</p>
+  
+   i) Style : Currency, percent, Unit
+
+    Ex:
+        <p>Price = {price.toLocaleString('en-IN', {style: 'currency', currency: 'USD'})}</p>
+        <p>Percent = {marks.toLocaleString('en-IN', {style: 'percent'})}</p>
+        <p>Weight = {weight.toLocaleString('en-IN', {style: 'unit', unit: 'meter'})}</p>
+  
+   ii) notation : compact 
+
+     ex: 
+
+           <p>Views = {views.toLocaleString('en-US', {notation: 'compact'})}</p>
+
+ d) isNaN() : It used to verify Number
+ e) parseInt() :
+ f) ParseFloat() :
+
+
+ String Type:
+
+ a) Double Quotes ""
+ b) Single Quotes ''
+ c) Backtick      ``
+
+- Backtick allow dynamic binding expression using "${}"
+
+ Syntax: 
+ 
+  <p className={`${effect} bg-style`}>This is Paragraph</p>
+
+ Note : All string Functions are same as in JavaScript.
+
+3. Boolean Type
+
+ - JavaScript Boolean types handles true or false.
+ - React JSX element can't display Boolean value, it can just use the Boolean.
+ - You have to use various operators and functions to customize the display.
+
+ Syntax:
+
+  const [stock] = useState(true);
+ 
+  Ex:
+    <p>Stock : {(stock === true) ? "is Available" : "not Available"}</p>
+        
+ 4. Null Type
+
+ - It returns a keyword "null" when value is not defined dynamically into a reference.
+ - You can verify by using null keyword.
+
+ 
+ Syntax:
+
+  a) Set a Session in your browser console
+
+  ->sessionStorage.setitem("username", "gayatri");
+
+  b) You can view and control session storage in your browser debugging tools at applications category.
+
+  c) Verify session and render conditionally. session returns "null" if it is removed from browser storage.
+
+ 
+
+ 5. undefined Type
+
+ - React configures undefined as keyword when value is not defined into a reference.
+ - It is verified using "undefined" keyword.
+
+ Syntax:
+
+ const [price] = useState(6433);
+
+ <p>{(price === undefined)?"Price is not Defined" : "Price is defined"}</p>
+
+
+ 6. Big Int
+
+ - Large integers are not safe to use in browser.
+ - Big Int specifies that it is a safe large integer and can be safely used in browser.
+
+ Syntax:
+
+ const [price] = useState(98723673224n);
+
+ <p>{price}</p>
+
+ 
+ 7. Symbol
+
+ - It is used to configure a hidden property for object.
+ - Hidden properties are ignored over iterations but accessible individually.
+
+ 
+Object Type
+
+- Object is same as in JavaScript.
+- All Object Manipulations are same
+
+ Syntax:
+
+ var obj = {key: value}
+
+
+ 1. Reading all keys  Object.keys(), for..in
+
+ 2. Read specific key value  obj.key, obj[key] => outside object
+
+                                           this.key ==> inside object
+
+ 3. Remove any key             delete operator
+ 4. Find any key               in operator
+
+
+ Syntax:
+
+ const [obj] = useState({key: value});
+
+ <p>{obj.key}</p>
+
+
+                       React Ajax Techniques
+
+1. XMLHttpRequest Object
+
+ - It can handle AJAX request from browser.
+ - It is javascript browser window object.
+
+ Step -1: Configure XMLHtttpRequest Object
+ 
+   let http = new XMLHttpRequest();
+
+step -2: Configure the request method & URL
+
+ http.open("method", "url", async:true/false)
+
+ method : GET, POST, PUT, DELETE
+
+step 3: Send the resquest
+
+   http.send();
+
+step 4: Execute the request by using "onreadystatechange" event
+
+ http.onreadystatechange = function(){
+
+ }
+
+step 5: verify the ready state
+
+ 1 initial
+ 2 success
+ 3 complete
+ 4 ready
+
+ on ready you can get the response and implement in component
+
+  if(http.readystate === 4)
+   {
+
+   }
+
+step 6: Access the response
+
+ http.responseText
+ http.responseHTML
+ http.responseXML
+
+ 
+                          Fetch API
+
+- It is a javascript promise.
+- It is async by default.
+
+
+ Syntax:
+
+  fetch("url")
+  .the(function(response){
+    //on success
+   })
+  .catch(function(error){
+   //report error
+   })
+  .finally(function(){
+   //executes always
+   })
+
+
+  Issues with Fetch:
+
+ - It returns data in binary
+ - It requires explicit conversions
+ - It is not good in error handling.
+ - You can't cancel the request.
+ - XSRF, XSS, CROS issues.
+
+                
+                                           Axios
+
+- It is a 3rd party library for rect used to make Ajax calls.
+- It is good for error handling.
+- It uses async techniques.
+- It handles issues like CROS, XSRF, XSS etc.
+- It allows to cancel requests.
+- It uses virtual DOM.
+- It can handle multiple requests simultaneously at the same time.
+- It can transform data into native format.
+- It can transform JSON.
+- Explicit conversions not required.
+
+
+ 1. install axios for your project
+
+  > npm install axios --save
+
+2. Import axios from "axios";   // It is a default export
+
+3. configure axios request. It is promise based hence it uses 
+
+ a) then()
+ b) catch()
+ c) finally()
+
+ axios.get()     for fetching
+ axios.post()    for saving
+ axios.put()     for updating
+ axios.patch()   for partial update
+ axios.delete()  for removing etc.
+
+Syntax:
+
+ axios.get("url")
+  .then(function(response){
+       //returns response object
+   })
+ .catch(function(error){
+     // returns error object
+   })
+ .finally(function(){
+   // executes always
+  })
+
+
+ - Axios response comprises of various details like
+
+ a) data
+ b) headers[content-type]
+ c) statusCode
+ d) statusText
+ e) readyState etc..
+
+ 
+                                     Binding Date Type
+
+- JavaScript date is configured by using Date constructor.
+
+ var now = new Date();  // loads current date & time
+
+ var mdf = new Date("yy-mm-dd hrs:min:sec:milliSec");
+
+- React date is configure by using date constructor.
+- If you want to initialize date then avoid "new" dynamic memory allocation 
+
+
+Syntax:
+
+ const [today, setTody] = useState(Date());
+
+ {today} // return current date and time
+
+- JavaScript can display date and time value by using various methods
+
+ getHours()
+ getMinutes()
+ getSeconds()
+ getDay()
+ getDate()
+ getMonth()
+ getFullYear()
+ tolocaleDateString()
+ toDateString()
+ toLocaleTimeString()
+ toTimeString()
+
+- React will not directly allows the date & time functions for formatting.
+- React uses 3rd party date libraries like
+ 
+ a) moment
+ b) dayjs
+ c) luxon etc..
+
+ 
+Formating Date & Time using Moment:
+
+ 1. install moment for project
+
+  > npm install moment --save
+ 
+2. import moment into component
+
+ > import moment from "moment";
+
+3. Apply format for date using moment method
+
+  moment (your_date).format('your_format');
+
+ Your date format can have:
+
+ ddd      short weekday
+ dddd     long weekday
+
+ DD       date value
+ Do       date value with suffix
+ 
+ MM       Month number
+ MMM      short month format
+ MMMM     Long month format
+
+ yy       short year format
+ yyyy     full year format
+
+
+                                           Two Way Binding
+
+- React supports only one way binding implicitly.
+- Two Binding require explicit techniques.
+- To Manage two way binding element requires "onchange" event to configure.
+- "onchange" maps to a function that collects new value and updates into source.
+
+ Syntax:
+
+ <input type="text" onChange={handleChange} />
+
+ function handleChange()
+
+ {
+  
+ }
+
+                                         Event Binding in React
+
+1. What is Event?
+
+ - Event is a message sent by sender to its subscriber in order to notify changes.
+ - Event uses a communication pattern called "Observer".
+ - Event follows a delegate mechanism (function pointer).
+
+
+ Syntax:
+
+   function handleClick()   => subscriber
+   {
+     
+   }
+
+   <button onclick="handleClick()">   => Sender
+
+- Subscriber defines actions to perform.
+- sender triggers a notification to perform the functionality.
+
+2. What is Event Listener?
+
+ - A listener is used to configure event for element dynamically.
+ - JavaScript uses "addEventListner()" function for configuring events.
+
+ Syntax:
+
+ document.querySelector("button").addEventListner("event", function(){})
+
+
+ event => click, blur, keyup, change etc..
+
+
+3. What is Event Handler?
+
+ - A handler is used to configure event for any element statically.
+ - It uses "on" as prefix to attach any event with element.
+
+ Syntax:
+
+ onclick="handleClick()"   // handler name
+ click                     // event name
+

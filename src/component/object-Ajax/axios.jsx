@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 
-export default function Fetch() {
+export default function AxiosFetch() {
     const [product, setProduct] = useState([{id: 0, name: "", category: "", price: 0, brand: "", stock: 0, rating: 0}]);
 
     function GetData() {
