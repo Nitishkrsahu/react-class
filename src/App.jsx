@@ -9,11 +9,14 @@ import Nulltype from "./component/binding/Nulltype"
 import Undefined from "./component/binding/Undefined"
 import Object from "./component/object-Ajax/object"
 import Ajax from "./component/object-Ajax/ajax"
+import Fetch from "./component/object-Ajax/fetch"
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import '../node_modules/bootstrap-icons/font/bootstrap-icons.css'
 
 function App(){
   return(
     <div>
-      <Ajax></Ajax>
+      <Fetch></Fetch>
     </div>
   )
 }
