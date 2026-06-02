@@ -986,3 +986,83 @@ Formating Date & Time using Moment:
  onclick="handleClick()"   // handler name
  click                     // event name
 
+  4. What are Event Arguments?
+
+ - Event arguments carry payload.
+ - Payload is the data carried from one location to another.
+ - javascript can use default arguments and custom arguments.
+
+  - The default arguments are 
+
+   a) this
+   b) event
+
+  - "this" sends information about current element, which includes 
+     id, name, className, src, width, height, href...
+ 
+ - "events" sends information about current event, which includes
+
+   clientX,
+   clientY,
+   ctrlKey
+   altkey
+   shiftkey
+   keycode
+   which etc...
+ 
+
+ Note : Event listener allows only one argument that is "event". however it allows to access both element and event details.
+
+ 
+ 5. What is Event propagation or Event Bubbling? How to stop Propagation?
+
+ A- It is mechanism where the child event simulates parent events.
+    It child continues to propagates with parent events.
+    You can prevent propagation by using event menthod "stopPropagation()".
+
+
+   Syntax:
+
+   function ChildEvent(e){
+      e.stopPropagation();
+   }
+ 
+ 6. How to stop default functionality of generic elements?
+
+ A. Generic elements are configured with pre-defined functionality.
+    If you define any custom actions to perform then it triggers both default & custom.
+    you can stop default actions by using event method "preventDefault()".
+
+   Syntax:
+
+     function Submit(e)
+     {
+       e.preventDefault(e)
+     }
+    
+    <from onsubmit="Submit(event)">
+
+7. What is Event loop?
+
+ - It is a mechanism of javascript that allows to execute events without blocking other requests in the process.
+ - It uses unblocking mechanism.
+ - JavaScript provides implicitly several techniques that use event loop, like
+
+  a) setTimeout()
+  b) fetch()
+
+ you can explicitly configure event loop by using "async & await".
+
+ 8. What is Event Profiling?
+    
+ - It is the mechanism of identifying the actions performed and tracking the performance of the action in page.
+ - Developers can track the events and actions performed by events.
+
+  a) Go to developer tools in browser
+  b) open "performance"
+  c) Start recording
+  d) Trigger Events
+  e) Stop recording
+  f) Watch the profile
+
+ Note All JavaScript events are browser events. they are configured by browser window object.

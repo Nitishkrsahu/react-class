@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("Start Execution");
+        fetch('https://fakestoreapi.com/products/categories')
+        .then(async response => await response.json())
+        .then(data => {
+            data.map(async item => {
+                console.log(await item);
+            })
+        })
+        setTimeout(function(){
+            console.log(`I am fetching data from API`);
+        }, 0);
+        console.log('End Execution');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
