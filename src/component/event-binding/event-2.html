@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function PageLoad(){
+            document.getElementById("btnInsert").addEventListener("click", function(e){
+                console.log(`
+                X position: ${e.clientX}\n
+                Y Position : ${e.clientY}\n
+                Ctrl Key : ${e.ctrlKey}\n
+                Button Id : ${e.target.id}\n
+                Button Value : ${e.target.value}
+                `)
+            })
+        }
+    </script>
+</head>
+<body onload="PageLoad()">
+    <button id="btnInsert" value="Insert">Insert</button>
+</body>
+</html>
