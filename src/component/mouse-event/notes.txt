@@ -1,0 +1,72 @@
+                                          React Events
+
+ - React can't use the JavaScript Browser events.
+ - React Provides "Synthetic Events" library.
+ - It is virtual DOM library for React to handle events.
+ - The Synthetic Events map to browser events.
+
+       onClick Synthetic Event => onclick Browser Event
+
+ - Synthetic Event is the base for all events in React
+ 
+     onClick : MouseEventHandler : EventHandler : SynthenticEvent
+                                          
+ - Synthetic Events are categorized into various groups
+
+   1. Mouse Events
+   2. keyboard Events
+   3. Button Events
+   4. Timer Events
+   5. Clipboard Events
+   6. Form Events
+   7. Touch Events etc...
+
+ 
+ FAQ: How React uses custom arguments in Events?
+
+ - By configuring a function that returns handler with arguments.
+ 
+ Syntax:
+
+      <button onClick={(event) => handleClick(event, your_args)}
+  
+   function handleClick(...args)
+   {
+
+   }
+
+  FAQ: How to Stop propagation & how to prevent default actions?
+ 
+  - By Using Event Mehtods
+    a)stopPropagation()
+    b) preventDefault()
+
+
+ React Style binding:
+
+ - Styles are configured for JSX elements using 'style' property.
+ - It requires a dynamic style object.
+ - style object is a javascript object in JSX with key anf value.
+ - Key is a CSS property defined in camel Case.
+ - value is a string.
+
+  {
+    backgroundColor: 'red';
+    boxShadow: '2px 3px 2px black',
+    color: 'white'
+  }
+
+ Syntax:
+
+    <p style={{key : 'value'}}></p>
+
+                          
+                                         React Mouse Events
+
+ - onMouseOver
+ - onMouseOut
+ - onMouseUp
+ - onMouseDown
+ - onMouseMove
+
+
