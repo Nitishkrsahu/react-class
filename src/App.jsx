@@ -20,11 +20,13 @@ import '../node_modules/bootstrap-icons/font/bootstrap-icons.css'
 import EventPro from "./component/react-event/EventPro"
 import DynamicCss from "./component/react-event/dynamic"
 import MouseEvent from "./component/mouse-event/MouseEvent"
+import MouseEventNew from "./component/mouse-event/mouseEvent-1"
+import KeyboardEvent from "./component/keyboardEvent/keyboard-1"
 
 function App(){
   return(
     <div>
-      <MouseEvent></MouseEvent>
+      <KeyboardEvent></KeyboardEvent>
     </div>
   )
 }
