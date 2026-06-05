@@ -1,0 +1,79 @@
+2. KeyBoard Event 
+
+ onKeyUp
+ onKeyDown
+ onKeyPress
+
+- Event arguments used with keyboard events are keycode
+
+- keyUp & keyDown are good for verifying chars.
+- keypress is good for verifying char code.
+
+
+3. Button Events
+
+ onclick
+ onDoubleClick [ondblclick]
+ onContextMenu [right click]
+
+
+4. Element State Events
+
+ onFocus
+ onBlur
+ onChange
+
+Note : React two way binding can be configured only by using 'onChange'.
+
+5. Timer Events
+
+ setTimeout()
+ clearTimeout()
+ setInterval()
+ clearInterval()
+
+ 
+Syntax:
+
+ setTimeout(function(){}, interval)
+ 
+
+ It is used to control and configure debounce
+ Debounce allow to delay any task by specified duration.
+ It can lock and make task inactive for specific duration.
+
+ 2. clearTimeout()
+
+ - It is used to remove the task from memory before released into process.
+ - It requires a references memory name where the task is stored.
+ - JavaScript uses variables to store tasks in memory reference.
+ - React up to 17 also used variables.
+ - react 18X version introduced a new hook by name "useRef()" to configure reference memory.
+
+ 
+Syntax:
+ clearTimeout(referenceName);
+
+
+
+                                   React useRef() Hook
+
+
+- It is a new hook in React from 18x version.
+- It allocate a reference memory.
+- Reference memory is intended to use in internal process.
+- It is not designed for rendering output. However it can be used for rendering output.
+- It allocates memory dynamically to store any thread.
+
+
+ Syntax:
+
+ let ref = useRef(null); 
+
+ - You have to configure and assign a value into reference memory by using "current" property.
+
+ Syntax:
+
+ ref.current = value| function;
+
+ - You can access by using "current" property
