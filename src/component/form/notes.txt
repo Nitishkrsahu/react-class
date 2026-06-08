@@ -1,0 +1,48 @@
+ 3. setInterval()
+
+ - It is used to configure any task that requires "throttle".
+ - Throttle is a mechanism where a task is initiated and executed repeatedly at regular intervals until removed from memory.
+ 
+  Syntax:
+
+   setInterval(function(){}, interval)
+
+ 4. clearInterval()
+
+ - It is used to stop the throttle.
+ - It requires a memory reference where the task is configured.
+
+ Syntax:
+
+ clearInterval(referenceName);
+
+
+                   Forms Events
+
+onSubmit
+onReset
+
+- Submit and reset events are configured for <form> elements
+- They define actions to perform on submit and reset of form.
+
+ Syntax:
+
+ <form onsubmit={} onReset={}>
+
+
+                  React Forms
+
+- React Provides "FormData", which is a key/value pair representing from fields and their values.
+- You can access any form element and de-structure using FormData.
+
+ Syntax:
+
+ function handleSubmit(e){
+   const form = e.target;
+   const formData = new FormData(form);
+  
+ }
+
+ <form onSubmit={handleSubmit}>
+
+ 

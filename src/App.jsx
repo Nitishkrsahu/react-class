@@ -25,11 +25,14 @@ import KeyboardEvent from "./component/keyboardEvent/keyboard-1"
 import ButtonEvent from "./component/button-event/button-1"
 import ElementState from "./component/element-State/ElementState"
 import UseRef from "./component/timerEvent/Useref"
+import TimerEvent from "./component/timerEvent/timer-1"
+import StopWatch from "./component/timerEvent/StopWatch"
+import Form from "./component/form/Form"
 
 function App(){
   return(
     <div>
-      <UseRef></UseRef>
+      <Form></Form>
     </div>
   )
 }
