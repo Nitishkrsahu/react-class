@@ -30,7 +30,7 @@ onReset
  <form onsubmit={} onReset={}>
 
 
-                  React Forms
+      React Forms
 
 - React Provides "FormData", which is a key/value pair representing from fields and their values.
 - You can access any form element and de-structure using FormData.
@@ -44,5 +44,96 @@ onReset
  }
 
  <form onSubmit={handleSubmit}>
+
+ 
+React 3rd Party Libraries
+
+ - React can plugin with various 3rd party forms liks
+
+ a) Formik
+ b) Telerik Kendo Form
+ c) React Hook Form etc...
+
+ - These 3rd party libraries provides pre-defined functions for form interactions and validations.
+
+ Formik Library:
+
+ 1. install formik for project
+
+  > npm install formik --save
+
+ 2. import formic core library into component
+
+   import formik as alias from "formik";  // for aliasing and importing all
+
+ 3. You can configure a form using "useFormik" hook
+  
+    import {useFormik} from "formik";
+
+  const formik = useFormik({
+
+          initialValues: {}   // refers to "FormData"
+          validation: function(){},
+          validationSchema: schemaObject,
+          onsubmit: function(){},
+          enableReinitialize: Boolean,
+      })
+
+ 4. Bind on submit for form element
+ 
+    <form onSubmit={formik.handleSubmit}
+
+
+                        Form Validation
+
+- Validation is the process of verifying user input.
+- Validation is required to ensure that contradictory and unauthorized data is not get stored into database
+- HTML5 provides pre-defined validations for elements, which include services like
+
+  a) required
+  b) minlength
+  c) min
+  d) max
+  e) pattern
+  f) email
+  g) url etc...
+ 
+ - It is recommended to disable the default validations, when you are configuring custom validations.
+
+ Syntax:
+
+  <form novalidate>
+
+  </form>
+
+  - Formik allows to configure custom validation using 2 techniques
+
+  a) Manually writing a validation function
+  b) Using any validation schema library
+
+  Manual Validation FUnction
+
+ 1. Create a function that collects from data, validates the data and return errors.
+
+    function ValidateUser(formData)
+    {
+      var errors = {}
+      // your validation methods
+
+      return erros;
+    }
+ 
+ 2. Assign validation function to formik form
+ 
+   const formik = useFormik({
+   
+        initalValues: {},
+        validate: ValidateUser,
+        onsubmit: (values)=>{}
+    })
+
+3. you can access and display errors messages by using "formik.errors"
+
+ <div> {formik.errors.fielName}</div>
 
  
