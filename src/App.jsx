@@ -28,11 +28,13 @@ import UseRef from "./component/timerEvent/Useref"
 import TimerEvent from "./component/timerEvent/timer-1"
 import StopWatch from "./component/timerEvent/StopWatch"
 import Form from "./component/form/Form"
+import FormikForm from "./component/form/formik"
+import FormikValidate from "./component/form/FormikValidate"
 
 function App(){
   return(
     <div>
-      <Form></Form>
+      <FormikValidate></FormikValidate>
     </div>
   )
 }

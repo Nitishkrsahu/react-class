@@ -5,7 +5,12 @@ export default function Form() {
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
+
         console.log(formData);
+        for(var item of formData.values()){
+            console.log(item);
+        }
+        console.log(`User Age: ${formData.get('Age')}`);
     }
     return (
         <div className='container-fluid'>
