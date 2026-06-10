@@ -30,11 +30,12 @@ import StopWatch from "./component/timerEvent/StopWatch"
 import Form from "./component/form/Form"
 import FormikForm from "./component/form/formik"
 import FormikValidate from "./component/form/FormikValidate"
+import Yup from "./component/form/Yup"
 
 function App(){
   return(
     <div>
-      <FormikValidate></FormikValidate>
+      <Yup></Yup>
     </div>
   )
 }

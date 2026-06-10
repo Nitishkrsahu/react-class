@@ -1,33 +1,9 @@
 import React from 'react'
 import { useFormik } from 'formik';
+import * as yup from 'yup';
 
-export default function FormikValidate() {
+export default function Yup() {
 
-    function ValidateUser(formData){
-        var errors = {UserName:'',Email: '', Age: '', Gender: '', City: ''}
-    
-        if(formData.UserName.length === 0){
-            errors.UserName = `Username Required`
-        }else{
-            if(formData.UserName.length < 4){
-                errors.UserName = `Name too Short`
-            }
-            
-        }
-
-        if(formData.Gender === ''){
-            errors.Gender = `Please Select Your Gender`
-        }else{
-            errors.Gender = '';
-        }
-        if(formData.City === '1'){
-            errors.City = 'Please select your city';
-        }else{
-            errors.City = '';
-        }
-
-        return errors;
-    }
     const formik = useFormik({
         initialValues: {
             UserName: '',
@@ -36,7 +12,11 @@ export default function FormikValidate() {
             Gender: '',
             City: ''
         },
-        validate: ValidateUser,
+        validationSchema: yup.object({
+            UserName: yup.string().required('User Name Required').min(4, 'Name is too short'),
+            Email: yup.string().required('Email Required'),
+            Age: yup.string().required('Age is Required').min(2, 'Age is not Valid')
+        }),
         onSubmit: (data) => {
             console.log(data);
         }

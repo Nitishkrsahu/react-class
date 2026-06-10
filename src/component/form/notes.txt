@@ -137,3 +137,86 @@ React 3rd Party Libraries
  <div> {formik.errors.fielName}</div>
 
  
+                        Form Validation
+
+- Validation is the process of verifying user input.
+- Validation is required to ensure that contradictory and unauthorized data is not get stored into database
+- HTML5 provides pre-defined validations for elements, which include services like
+
+  a) required
+  b) minlength
+  c) min
+  d) max
+  e) pattern
+  f) email
+  g) url etc...
+ 
+ - It is recommended to disable the default validations, when you are configuring custom validations.
+
+ Syntax:
+
+  <form novalidate>
+
+  </form>
+
+  - Formik allows to configure custom validation using 2 techniques
+
+  a) Manually writing a validation function
+  b) Using any validation schema library
+
+  Manual Validation FUnction
+
+ 1. Create a function that collects from data, validates the data and return errors.
+
+    function ValidateUser(formData)
+    {
+      var errors = {}
+      // your validation methods
+
+      return erros;
+    }
+ 
+ 2. Assign validation function to formik form
+ 
+   const formik = useFormik({
+   
+        initalValues: {},
+        validate: ValidateUser,
+        onsubmit: (values)=>{}
+    })
+
+3. you can access and display errors messages by using "formik.errors"
+
+ <div> {formik.errors.fieldName}</div>
+
+
+                                     Yup Library
+
+- It is a validation library used with formik.
+- It provides pre-defined validation services.
+- It contains validation schema.
+- Service is predefined with functionality, you have to inject and customize according to the requirements.
+
+ 1. Install Yup library for project
+
+  > npm install yup --save
+
+ 2. You can import all services or any specific required services into component
+
+   import * as Yup from 'Yup'
+
+             (or)
+
+   import {required, minLength, maxLength} from 'Yup
+
+ 3. You have to attach the schema using formik validation schema
+
+   const formik = useFormik({
+         
+       initialValue : {},
+       validationSchema: yup.object({
+                      
+                 fieldname:
+            yupDataType().required('message').minlength(n, 'message')
+            })
+      )}
