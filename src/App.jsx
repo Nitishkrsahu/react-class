@@ -31,11 +31,13 @@ import Form from "./component/form/Form"
 import FormikForm from "./component/form/formik"
 import FormikValidate from "./component/form/FormikValidate"
 import Yup from "./component/form/Yup"
+import Navbar from "./component/controlled/Navbar"
 
 function App(){
   return(
     <div>
-      <Yup></Yup>
+      <Navbar signin={true} theme="bg-dark text-white" brandName="Fllipkart" menuItems={['Home', 'Shop', 'About', 'Contact']} color='btn btn-warning'></Navbar>
+      <Navbar signin={false} theme="bg-warning text-dark" brandName="Amazon" menuItems={['Home', 'Pages', 'Privacy', 'Service']} color='btn btn-danger'></Navbar>
     </div>
   )
 }

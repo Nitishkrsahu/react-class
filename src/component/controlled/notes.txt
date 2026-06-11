@@ -1,0 +1,100 @@
+                                                Controlled Components
+
+- A Component comprises of reusable design and functionality.
+- Uncontrolled component have same design and functionality to use everywhere.
+- A controlled component can change the design and functionality according to state and situation.
+- It is controlled by data passed from parent.
+- Design and functionality are controlled using "properties". [props]
+- A controlled component is a function with props as parameters.
+
+ Syntax:
+
+        function Component(props)
+        {
+   
+ 
+        }
+- Props is a formal parameter, which is object type. It comprises of key and value.
+
+ 
+ return (
+
+        <div>
+             {props.key}
+        </div>
+
+       )
+- The value into key are passes from parent component.
+ 
+           <Component key={value}>
+
+
+
+                               React Hooks
+
+- Hook is a service.
+- Service is a pre-defined business logic, which you can customize and implement according to the requirements.
+- Service is a set of factories with values and function.
+- it uses a single ton pattern. An object is created for first requests.
+
+  - Service comprises of
+
+  a) Provider
+  b) Injector
+  c) Consumer
+
+ - Provider locates value in memory.
+ - injector injects into your component. 
+ - consumer is the component that uses service.
+
+                                        React Hooks
+
+ 1. UseState()
+
+ - State management for component while creating component.
+ - UseState() is a hook required to access the local state.
+ - It is available only for current component.
+ - It is not accessible to its child component.
+ - you have to initialize values into the state while allocating memory for state.
+ - State is an object with getter and setter.
+ - Getter reads and returns value.
+ - setter initialize value into state
+
+   Syntax: 
+ 
+           const [getter, setter ] = useState(anyType);
+
+
+ 2. useEffects
+
+   - It is used to configure the mount and unmount phase for component explicitly.
+   - You can configure additional actions to perform at the time of mount & unmount.
+   - Every component can mount and unmount only once.
+   - It requires dependencies to configure, so that when ever dependency changes the component will mount again.
+
+  Syntax:
+
+   useEffect(()=>{
+ 
+         //actions on mount;
+     return()=>{
+
+        // action on unmount;
+   }
+ },[dependencies])
+
+
+FAQ:
+
+ a) can we define multiple mount phases explicitly?
+
+ b) Can we have multiple useEffect() configured for single component?
+
+ - Yes
+
+ c) why we need multiple useEffect() configured in a component?
+
+  Syntax:
+
+           useEffect(()=>{},[id])
+           useEffect(()=>{},[])
