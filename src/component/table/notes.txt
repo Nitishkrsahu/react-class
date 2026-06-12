@@ -1,0 +1,11 @@
+                                Routing in React
+
+- Routing is a technique used in web applications to configure user and SEO friendly URL's
+
+
+- Routing configures navigation in SPA. [Single page Application].
+- User can stay on one page and can access everything from the page.
+- Routing implements AJAX implicitly.
+- It allows to add new details into page without reloading the page.
+- Routing can be configured server side and client side.
+- React client side routes are defined by using "React DOM" library.

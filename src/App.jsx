@@ -32,12 +32,15 @@ import FormikForm from "./component/form/formik"
 import FormikValidate from "./component/form/FormikValidate"
 import Yup from "./component/form/Yup"
 import Navbar from "./component/controlled/Navbar"
+import Table from "./component/table/Table"
 
 function App(){
   return(
     <div>
-      <Navbar signin={true} theme="bg-dark text-white" brandName="Fllipkart" menuItems={['Home', 'Shop', 'About', 'Contact']} color='btn btn-warning'></Navbar>
-      <Navbar signin={false} theme="bg-warning text-dark" brandName="Amazon" menuItems={['Home', 'Pages', 'Privacy', 'Service']} color='btn btn-danger'></Navbar>
+      {/* <Navbar signin={true} theme="bg-dark text-white" brandName="Fllipkart" menuItems={['Home', 'Shop', 'About', 'Contact']} color='btn btn-warning'></Navbar>
+      <Navbar signin={false} theme="bg-warning text-dark" brandName="Amazon" menuItems={['Home', 'Pages', 'Privacy', 'Service']} color='btn btn-danger'></Navbar> */}
+      <Table caption="Employees Data table" field={['First Name', 'Last Name', 'Phone', 'City']} data={[{'First Name': 'Neha', 'Last Name': 'Wankhede', 'Phone': 6543245654, 'City': 'Pune'}, {'First Name': 'Gayatri', 'Last Name': 'Bagul', 'Phone': 7878845654, 'City': 'Hyd'}]}></Table>
+      {/* <Table caption="Employees Data table" field={['First Name', 'Last Name', 'Phone', 'City']} data={[{'First Name': 'Neha', 'Last Name': 'Wankhede', 'Phone': 6543245654, 'City': 'Pune'}, {'First Name': 'Gayatri', 'Last Name': 'Bagul', 'Phone': 7878845654, 'City': 'Hyd'}]}></Table> */}
     </div>
   )
 }
