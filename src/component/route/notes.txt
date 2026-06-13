@@ -1,0 +1,61 @@
+                                   Routing in React
+
+- Routing is a technique used in web applications to configure user and SEO friendly URL's
+- Routing configures navigation in SPA. [Single page Application].
+- User can stay on one page and can access everything from the page.
+- Routing implements AJAX implicitly.
+- It allows to add new details into page without reloading the page.
+- Routing can be configured server side and client side.
+- React client side routes are defined by using "React DOM" library.
+
+
+   React up to 17 version uses : React DOM v5
+   React 18 & 19 uses : Router DOM V6 & V7
+
+ 1. Install react Router DOM
+
+  > npm install react-router-dom --save // latest is 7x
+
+  > npm install react-router-dom@v5 --save
+
+2. Router DOM provides following components to configure routes
+
+  <BrowserRouter>   - It is a provider for route.
+                    - It transforms the virtual DOM route into actual DOM. 
+                    - It uses browser location object.
+
+  <Routes>          - It configures a collection of routes.
+                    - It is uses to build a route table
+
+  <Route>           - It configures individual routes.
+                    - Every route have a path and component to render.
+ 
+  <Link>            - It is used to configure a hyperlink for route.
+                    - It allows to navigate to any specific route path.
+ 
+  <Outlet>          - It configures that refers to container where the resulting markup is rendered.
+                    - It is used while configuring child routes
+
+
+ Syntax:
+
+          <BroweserRouter>
+               <Routes>
+                   <Route path="" element={} />
+                   <Route path="" element={} />
+               <Routes>
+          </BrowserRouter>
+
+ - Route path can use wild card routes
+
+   path="/"    - It renders a component when user request is not for any specific.
+
+   path="*"    - It renders a component when requested path not found.
+
+ - Always keep the wild card "*" as last route in routes list.
+ - It is recommended to configure "/" as first route.
+ - You can navigate to any route path using Link components
+
+   <Link to="path"> Text|Image</Link>
+
+
