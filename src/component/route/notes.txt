@@ -57,5 +57,3 @@
  - You can navigate to any route path using Link components
 
    <Link to="path"> Text|Image</Link>
-
-
