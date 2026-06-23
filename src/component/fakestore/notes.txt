@@ -1,0 +1,169 @@
+                                React Material UI
+                                   [MUI]
+
+- It provides various services like
+
+ a) MUI core
+ b) MUI X
+ c) Templates
+ d) Design Kits
+
+ - MUI Core is a component library with a set of pre-defined controlled components.
+ - You can build interactive and responsive UI using MUI Components.
+ - MUI Core latest version is complete re-write of its pervious versions.
+ - It is added with new "emotion" library.
+
+ 1. install MUI with emotion library
+
+ > npm install @mui/material @emotion/react @emotion/styled
+
+ 2. import specific component related module or all from the core module
+
+  > import Button from "@mui/material/button";
+    import {Button, TextField, ...} from "@mui/material";
+
+ Syntax:
+
+      <Button props="" />
+
+
+
+                                        UseReducer
+
+- Every web application comprises of a "Global State", which is known as "Application State".
+- Application Comprises 
+
+ a) Application Start
+ b) application End
+ c) Session Start
+ d) Session End
+
+ - Every user is defined with a session.
+ - Session ends when user sign out.
+ - The Data of one session is not accessible to another session.
+ - "use-Reducer" hook allows to access the global state.
+ - "useReducer" allows to configure a predictable and maintainable global application state, so that it is easy to track, debug and test the application state.
+
+ - useReducer comprises of following components
+ 
+ a) store
+ b) state
+ c) reducer
+ d) action
+
+
+ Step 1: Store
+
+ - configure initial global state for storing values.
+ - You can configure a reference that can handle any type of data.
+
+  Syntax:
+
+   let initialValues = {    ==> Global Variable 
+
+            key: value,
+    }
+
+ 
+Step 2: Reducer
+  
+    - It is a function that handles states and actions.
+    - It can be identify the action type in component and update data into initial values [store].
+
+  Syntax:
+
+         function reducer(state, action)
+             {
+
+               switch(action.type)
+                {
+                  case "type":
+                  return update_data;  //state gets & updates
+                 }
+
+              }
+
+Step - 3 : Use Reducer
+
+ - A component can use the reducer.
+ - Reducer will dispatch action and data.
+ - it uses diff mechanism and updates the data into store on specified action.
+
+ Syntax:
+
+      const [state, dispatch] = useReducer(reducer, initialValues)
+
+  - In a component you need to dispatch action
+
+   function onClick()
+    {
+      dispatch({type: action})
+    }
+
+
+                                             React Redux Toolkit
+
+- Application comprises of states
+
+ a) Applicate state
+ b) session State
+
+- Application state is global and accessible across multiple sessions.
+- It uses a single ton pattern, where object is created for first request and the same is used across multiple requests.
+- redux is a javascript library used to configure global application state for javascript based applications.
+- It is predictable, debuggable and testable.
+- A toolkit provides various components for managing state at high level.
+- The major components of redux include
+
+ a) Store
+ b) state
+ c) reducer
+
+Store : It comprises of global state
+State : it can access the store
+reducer : It defines actions and updates the store
+
+1. Install Redux Toolkit for react
+ 
+ > npm install @reduxjs/toolkit react-redux --save
+
+
+2. Redux Toolkit Provides a slicer
+
+ - You have to create a slicer.
+ - slicer in redux comprises of initial state and reducer
+ - initial state refers to the data that you want to store in global state.
+ - reducer defines the actions to perform. It updates data into store
+ - Slicer is create by using createSlicer object.
+ 
+  
+ syntax:
+   
+      import {createSlice} from @reduxjs/toolkit;
+
+      const productSlice = createSlice({
+                
+                  name: "Products",
+                  initialState: [],
+                  reducer: {
+                           setproducts: (state, action)=>{
+                            return action.payload;
+                           },
+                         },
+                 })
+      export const {setProducts} = productSlice.actions;
+      export default productSlice.reducer;
+
+
+ Note: In module system the varibales are exported using default.
+          
+        There  can be only one default export
+     
+         a) State : It can access the members initial state
+         b) action : It collects the payload from UI and updates into state.
+                               [action.payload]
+
+         c) reducers : It configures a set of actions to manage from UI.
+                               [add, remove..]
+
+
