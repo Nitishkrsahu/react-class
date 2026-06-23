@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import FakestoreHome from './fakestore-Home';
 import FakestoreProduct from './fakestoreProduct';
+import FakestoreDetails from './fakestore-details';
 export default function FakestoreIndex() {
   return (
     <div className='container-fluid'>
@@ -13,6 +14,7 @@ export default function FakestoreIndex() {
             <Routes>
                 <Route path="/" element={<FakestoreHome />}></Route>
                 <Route path="products/:category" element={<FakestoreProduct />}></Route>
+                <Route path="details/:id" element={<FakestoreDetails />}></Route>
             </Routes>
         </section>
         </BrowserRouter>
